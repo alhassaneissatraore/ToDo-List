@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div data-role="page">
+            <div data-role="header">
+    <h1>
+        <span class="todo-text">To</span><span class="do-text">Do</span>
+        <span class="list-text">List</span>
+    </h1>
+    <p class="subtitle">Organisez votre journée efficacement</p>
+</div>
+            <div role="main" class="ui-content">
+                <form>
+                    <label for="task">Ajouter une tâche</label>
+                    <input type="text" id="task" placeholder="Nouvelle tâche">
+                    <label for="status">Statut</label>
+                    <select id="status">
+                        <option value="En cours">En cours</option>
+                        <option value="Terminée">Terminée</option>
+                    </select>
+                    <input type="button" value="Ajouter" onclick="ajouterTache()">
+                    <input type="button" value="Réinitialiser" onclick="reinitialiser()">
+                </form>
+                <div data-role="collapsible">
+                    <h3>Tâches en cours</h3>
+                    <ul id="taskListInProgress" data-role="listview" data-inset="true"></ul>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Tâches terminées</h3>
+                    <ul id="taskListCompleted" data-role="listview" data-inset="true"></ul>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>M2IA &copy; 2024</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #8b5cf6;
+    --tertiary-color: #ec4899;
+    --bg-color: #f3f4f6;
+    --card-color: #ffffff;
+    --text-color: #1f2937;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: var(--card-color);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+[data-role="header"] {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--tertiary-color));
+    color: white;
+    text-align: center;
+    padding: 50px 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+[data-role="header"]::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%),
+        linear-gradient(
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 1px
+        );
+    background-size: 100% 100%, 20px 20px, 20px 20px;
+    transform: rotate(30deg);
+}
+
+[data-role="header"] h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.ui-content {
+    padding: 40px;
+}
+
+form {
+    margin-bottom: 40px;
+    background: var(--bg-color);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    font-size: 16px;
+    transition: var(--transition);
+    background: var(--card-color);
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    outline: none;
+}
+
+input[type="button"] {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input[type="button"]:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.ui-collapsible {
+    margin-top: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.ui-collapsible:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.ui-collapsible-heading {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 20px 25px;
+}
+
+.ui-collapsible-heading h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.ui-listview {
+    list-style-type: none;
+    background: var(--card-color);
+}
+
+.ui-listview li {
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.ui-listview li:hover {
+    background: linear-gradient(to right, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+    transform: translateX(5px);
+}
+
+.ui-listview li button {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ui-listview li button:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-role="footer"] {
+    text-align: center;
+    padding: 30px;
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    margin-top: 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 0 0 30px 30px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        border-radius: 20px;
+    }
+    
+    [data-role="header"] {
+        padding: 40px 20px;
+    }
+    
+    .ui-content {
+        padding: 30px 20px;
+    }
+    
+    form {
+        padding: 20px;
+    }
+}
+
+/* Animations améliorées */
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.container {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.ui-listview li {
+    animation: fadeInUp 0.4s ease-out;
+    animation-fill-mode: both;
+}
+
+.ui-listview li:nth-child(1) { animation-delay: 0.1s; }
+.ui-listview li:nth-child(2) { animation-delay: 0.2s; }
+.ui-listview li:nth-child(3) { animation-delay: 0.3s; }
+/* ... et ainsi de suite pour plus d'éléments si nécessaire */
+
+/* Effet de glassmorphisme pour le formulaire */
+form {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Effet de néon pour les boutons */
+input[type="button"], .ui-listview li button {
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+input[type="button"]:hover, .ui-listview li button:hover {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.7);
+}
+
